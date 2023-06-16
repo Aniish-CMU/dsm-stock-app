@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Marketing</title>
+    
+ </head>
+<body>
+        <h2>Welcome to the Stock Prediction App</h2>
+        <h3>Pick a company to generate stock analytics</h3>
+        <form action = "{{ url_for('stock_predict') }}" method="POST">
+        <label for="ticker">Choose a stock:</label>
+
+        <select name="ticker" id="ticker_name">
+        <option selected> {{company}}</option>
+        <option value="AAPL">Apple</option>
+        <option value="AMZN">Amazon</option>
+        <option value="META">Meta</option>
+        </select>
+       # <p><input type="submit" value="Predict the Stock Price?" ></p>
+
+       {% if (prediction) %} 
+        <h3> Ticker Name: {{company}} </h3>
+        <h3> Average Stock Price: {{ prediction }}  </h3>
+
+        {% endif %}
+        </form>
+</body>
+</html>
