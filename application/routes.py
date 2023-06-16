@@ -23,7 +23,7 @@ def stock_predict():
    #convert data to json
     input_data = json.dumps({"ticker": ticker_value})
 
-    companyname_dict = {"AAPL": "Apple", "AMZN": "Amazon", "Meta": "Meta"}
+    companyname_dict = {"AAPL": "Apple", "AMZN": "Amazon", "META": "Meta"}
 
     #url for bank marketing model
     ##url = "http://localhost:5000/api"
