@@ -27,7 +27,7 @@ def stock_predict():
 
     #url for bank marketing model
     ##url = "http://localhost:5000/api"
-    url = "https://dsm-stock-model-bcb189c36199.herokuapp.com/"
+    url = "https://dsm-stock-model-bcb189c36199.herokuapp.com/api"
   
     #post data to url
     results =  requests.post(url, input_data)
