@@ -26,11 +26,16 @@ def stock_predict():
     companyname_dict = {"AAPL": "Apple", "AMZN": "Amazon", "META": "Meta"}
 
     #url for bank marketing model
-    ##url = "http://localhost:5000/api"
-    url = "https://dsm-stock-model-bcb189c36199.herokuapp.com/api"
+    url = "http://localhost:5000/api"
+   #3 url = "https://stockapp.herokuapp.com/api"
+  
     #post data to url
     results =  requests.post(url, input_data)
+    results_every =(pd.DataFrame.from_dict(results.json(), orient="index"))
+    #results_every = pd.read_json(results.json(), orient = 'index')
     #send input values and prediction result to index.html for display
-    return render_template("index.html", ticker = ticker_value,  prediction= results.content.decode('UTF-8'), 
+    return render_template("index.html", ticker = ticker_value,  average= results.json()['20_day_average'],
+                           median = results.json()['20_day_median'], low = results.json()['20_day_low'], 
+                           high = results.json()['20_day_high'],
                            company = companyname_dict[ticker_value])
     #return results

@@ -11,15 +11,18 @@
         <label for="ticker">Choose a stock:</label>
 
         <select name="ticker" id="ticker_name">
-        <option value="AAPL" id =  1 >Apple</option>
-        <option value="AMZN" id = 2>Amazon</option>
-        <option value="META" id = 3>Meta</option>
+        <option value="AAPL">Apple</option>
+        <option value="AMZN">Amazon</option>
+        <option value="META">Meta</option>
         </select>
        # <p><input type="submit" value="Predict the Stock Price?" ></p>
 
-       {% if (prediction) %} 
+       {% if (average) %} 
         <h3> Ticker Name: {{company}} </h3>
-        <h3> Average Stock Price: {{ prediction }}  </h3>
+        <h3> Next 20 Day Average Stock Price: {{ average }}  </h3>
+        <h3> Next 20 Day Median Stock Price: {{ median }}  </h3>
+        <h3> Next 20 Day Lowest Stock Price: {{ low }}  </h3>
+        <h3> Next 20 Day Highest Stock Price: {{ high }}  </h3>
 
         {% endif %}
         </form>
