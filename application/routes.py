@@ -26,8 +26,8 @@ def stock_predict():
     companyname_dict = {"AAPL": "Apple", "AMZN": "Amazon", "META": "Meta"}
 
     #url for bank marketing model
-    url = "http://localhost:5000/api"
-   #3 url = "https://stockapp.herokuapp.com/api"
+    #url = "http://localhost:5000/api"
+    url = "https://dsm-stock-model-bcb189c36199.herokuapp.com/api"
   
     #post data to url
     results =  requests.post(url, input_data)
